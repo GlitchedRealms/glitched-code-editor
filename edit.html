@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>GlitchedRealms demo</title>
+<style>
+  body{
+  border: 5px solid #e87d3e;
+	overflow:visible;
+	background:#2e2e2e;
+	height:98%;
+	width:99%;
+	}
+  html{
+  height:100%;
+  width:100%;
+  max-width:100%;
+  max-height:100%;
+	}
+	#drop_zone {
+  border-right: 5px solid #e87d3e;
+
+	background:#2e2e2e;
+	color:#d6d6d6;
+	width:10%;
+	}
+	#editorwin{
+  display:flex;
+	width:stretch;
+	height:100%;
+  } 
+	#editor{
+  width:100%;
+	}
+	#terminal{
+  border-left: 5px solid #e87d3e;
+	}
+
+	#editor, #drop_zone, #terminal{
+  resize: horizontal;
+  overflow: auto;
+	}
+
+</style>
+<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="node_modules/@xterm/xterm/lib/xterm.js"></script>
+<script defer src="utils.js"></script>
+<script defer src="editor.js"></script>
+</head>
+<body>
+
+<div id="editorwin">
+<div
+  id="drop_zone"
+  ondrop="dropHandler(event);"
+  ondragover="dragOverHandler(event);">
+  <p>Drag one or more files to this <i>drop zone</i>.</p>
+</div>
+
+
+<div id="editor">function foo(items) {
+	var x = "All this is syntax highlighted";
+	return x;
+}
+</div>
+
+<div id="terminal">
+</div>
+
+</div>
+    
+<script>
+
+</script>
+</body>
+</html>
+
